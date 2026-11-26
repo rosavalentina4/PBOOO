@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogDetailAngsuran</class>
+ <widget class="QDialog" name="DialogDetailAngsuran">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>490</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>440</width>
+    <height>460</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Detail Angsuran &amp; Denda</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: #F2F6F5;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #1E2D2B;
+    font-size: 13px;
+}
+
+QFrame#frameDialogHeader {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #D9E4E1;
+}
+
+QLabel#lblDialogTitle {
+    color: #1B3B36;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+QLabel#lblDialogSubtitle {
+    color: #5C706C;
+    font-size: 12px;
+}
+
+QGroupBox {
+    background-color: #FFFFFF;
+    border: 1px solid #D9E4E1;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 14px;
+    font-weight: bold;
+    color: #1B3B36;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 12px;
+    padding: 0 6px;
+    background-color: #FFFFFF;
+    color: #1F4E46;
+}
+
+QLabel {
+    color: #1E2D2B;
+}
+
+QLineEdit, QPlainTextEdit {
+    background-color: #EEF3F1;
+    border: 1px solid #C8D7D3;
+    border-radius: 5px;
+    padding: 6px 8px;
+    color: #364A47;
+    font-size: 13px;
+}
+
+QPushButton[btnType="neutral"] {
+    background-color: #EDF3F1;
+    color: #2B423E;
+    border: 1px solid #C8D7D3;
+    border-radius: 5px;
+    padding: 7px 16px;
+}
+
+QPushButton[btnType="neutral"]:hover {
+    background-color: #DFEAE6;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="layoutDetailAngRoot">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frameDialogHeader">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QVBoxLayout" name="layoutDialogHeader">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>14</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>14</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblDialogTitle">
+        <property name="text">
+         <string>Detail Jadwal Angsuran &amp;&amp; Denda</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblDialogSubtitle">
+        <property name="text">
+         <string>Rincian tagihan pokok, bunga, keterlambatan, dan status pembayaran.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="layoutDetailAngBody">
+     <property name="spacing">
+      <number>12</number>
+     </property>
+     <property name="leftMargin">
+      <number>20</number>
+     </property>
+     <property name="topMargin">
+      <number>14</number>
+     </property>
+     <property name="rightMargin">
+      <number>20</number>
+     </property>
+     <property name="bottomMargin">
+      <number>18</number>
+     </property>
+     <item>
+      <widget class="QGroupBox" name="grpDetailAngTagihan">
+       <property name="title">
+        <string>Rincian Tagihan Angsuran</string>
+       </property>
+       <layout class="QFormLayout" name="formDetailAng">
+        <property name="verticalSpacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <property name="topMargin">
+         <number>16</number>
+        </property>
+        <property name="rightMargin">
+         <number>14</number>
+        </property>
+        <property name="bottomMargin">
+         <number>14</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="lblDetAngIdPinjaman">
+          <property name="text">
+           <string>ID Pinjaman</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="txtDetAngIdPinjaman">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lblDetAngKe">
+          <property name="text">
+           <string>Angsuran Ke-</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="txtDetAngKe">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lblDetAngJatuhTempo">
+          <property name="text">
+           <string>Tanggal Jatuh Tempo</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="txtDetAngJatuhTempo">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="lblDetAngPokok">
+          <property name="text">
+           <string>Angsuran Pokok</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="txtDetAngPokok">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="lblDetAngBunga">
+          <property name="text">
+           <string>Bunga</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QLineEdit" name="txtDetAngBunga">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="lblDetAngTelat">
+          <property name="text">
+           <string>Keterlambatan</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLineEdit" name="txtDetAngTelat">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QLabel" name="lblDetAngDenda">
+          <property name="text">
+           <string>Denda Keterlambatan</string>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="1">
+         <widget class="QLineEdit" name="txtDetAngDenda">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="0">
+         <widget class="QLabel" name="lblDetAngTotal">
+          <property name="text">
+           <string>Total Tagihan</string>
+          </property>
+         </widget>
+        </item>
+        <item row="7" column="1">
+         <widget class="QLineEdit" name="txtDetAngTotal">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="0">
+         <widget class="QLabel" name="lblDetAngTglBayar">
+          <property name="text">
+           <string>Tanggal Bayar</string>
+          </property>
+         </widget>
+        </item>
+        <item row="8" column="1">
+         <widget class="QLineEdit" name="txtDetAngTglBayar">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="0">
+         <widget class="QLabel" name="lblDetAngStatus">
+          <property name="text">
+           <string>Status</string>
+          </property>
+         </widget>
+        </item>
+        <item row="9" column="1">
+         <widget class="QLineEdit" name="txtDetAngStatus">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="layoutDetAngButtons">
+       <item>
+        <spacer name="spacerDetAng">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnTutupDetailAng">
+         <property name="text">
+          <string>Tutup</string>
+         </property>
+         <property name="btnType" stdset="0">
+          <string>neutral</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

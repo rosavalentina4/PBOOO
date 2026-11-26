@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogSimulasiAngsuran</class>
+ <widget class="QDialog" name="DialogSimulasiAngsuran">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>740</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>660</width>
+    <height>520</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Simulasi Angsuran Pinjaman</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: #F2F6F5;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #1E2D2B;
+    font-size: 13px;
+}
+
+QFrame#frameDialogHeader {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #D9E4E1;
+}
+
+QLabel#lblDialogTitle {
+    color: #1B3B36;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+QLabel#lblDialogSubtitle {
+    color: #5C706C;
+    font-size: 12px;
+}
+
+QFrame[statCard="true"] {
+    background-color: #FFFFFF;
+    border: 1px solid #D9E4E1;
+    border-top: 3px solid #266D61;
+    border-radius: 8px;
+}
+
+QFrame[statCard="true"][cardAccent="blue"] {
+    border-top: 3px solid #2A6F8E;
+}
+
+QLabel[statTitle="true"] {
+    color: #5C706C;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QLabel[statValue="true"] {
+    color: #1B3B36;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+QGroupBox {
+    background-color: #FFFFFF;
+    border: 1px solid #D9E4E1;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 14px;
+    font-weight: bold;
+    color: #1B3B36;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 12px;
+    padding: 0 6px;
+    background-color: #FFFFFF;
+    color: #1F4E46;
+}
+
+QLabel {
+    color: #1E2D2B;
+}
+
+QComboBox, QSpinBox, QDoubleSpinBox {
+    background-color: #F9FBFA;
+    border: 1px solid #C8D7D3;
+    border-radius: 5px;
+    padding: 6px 8px;
+    color: #1E2D2B;
+    font-size: 13px;
+}
+
+QComboBox:focus, QSpinBox:focus, QDoubleSpinBox:focus {
+    border: 1px solid #2A7B6F;
+    background-color: #FFFFFF;
+}
+
+QTableWidget {
+    background-color: #FFFFFF;
+    alternate-background-color: #F6FAF8;
+    border: 1px solid #D9E4E1;
+    border-radius: 6px;
+    gridline-color: #E6EEEC;
+    selection-background-color: #D2EBE5;
+    selection-color: #14332E;
+}
+
+QHeaderView::section {
+    background-color: #E7F0ED;
+    color: #1B3B36;
+    padding: 7px 8px;
+    border: none;
+    border-right: 1px solid #D3E0DC;
+    border-bottom: 1px solid #C8D7D3;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+QPushButton[btnType="primary"] {
+    background-color: #266D61;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 14px;
+    font-weight: bold;
+}
+
+QPushButton[btnType="primary"]:hover {
+    background-color: #1F5B51;
+}
+
+QPushButton[btnType="secondary"] {
+    background-color: #2A6F8E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 14px;
+    font-weight: bold;
+}
+
+QPushButton[btnType="secondary"]:hover {
+    background-color: #215973;
+}
+
+QPushButton[btnType="neutral"] {
+    background-color: #EDF3F1;
+    color: #2B423E;
+    border: 1px solid #C8D7D3;
+    border-radius: 5px;
+    padding: 7px 14px;
+}
+
+QPushButton[btnType="neutral"]:hover {
+    background-color: #DFEAE6;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="layoutSimulasiRoot">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frameDialogHeader">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QVBoxLayout" name="layoutDialogHeader">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>14</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>14</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblDialogTitle">
+        <property name="text">
+         <string>Hitung Simulasi Angsuran Pinjaman</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblDialogSubtitle">
+        <property name="text">
+         <string>Simulasikan rincian cicilan pokok dan bunga per bulan sebelum mengajukan pinjaman.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="layoutSimulasiBody">
+     <property name="spacing">
+      <number>12</number>
+     </property>
+     <property name="leftMargin">
+      <number>20</number>
+     </property>
+     <property name="topMargin">
+      <number>14</number>
+     </property>
+     <property name="rightMargin">
+      <number>20</number>
+     </property>
+     <property name="bottomMargin">
+      <number>18</number>
+     </property>
+     <item>
+      <widget class="QGroupBox" name="grpParameterSimulasi">
+       <property name="title">
+        <string>Parameter Simulasi</string>
+       </property>
+       <layout class="QGridLayout" name="gridSimulasiInput">
+        <property name="horizontalSpacing">
+         <number>12</number>
+        </property>
+        <property name="verticalSpacing">
+         <number>10</number>
+        </property>
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <property name="topMargin">
+         <number>16</number>
+        </property>
+        <property name="rightMargin">
+         <number>14</number>
+        </property>
+        <property name="bottomMargin">
+         <number>14</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="lblSimJenis">
+          <property name="text">
+           <string>Jenis Pinjaman</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QComboBox" name="cmbSimJenis">
+          <item>
+           <property name="text">
+            <string>Pinjaman Reguler</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Pinjaman Mikro / Usaha</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Pinjaman Darurat</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QLabel" name="lblSimBunga">
+          <property name="text">
+           <string>Suku Bunga / Bln</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <widget class="QDoubleSpinBox" name="spnSimBunga">
+          <property name="suffix">
+           <string> %</string>
+          </property>
+          <property name="decimals">
+           <number>2</number>
+          </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.250000000000000</double>
+          </property>
+          <property name="value">
+           <double>1.500000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lblSimNominal">
+          <property name="text">
+           <string>Nominal Pinjaman</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QDoubleSpinBox" name="spnSimNominal">
+          <property name="prefix">
+           <string>Rp </string>
+          </property>
+          <property name="decimals">
+           <number>0</number>
+          </property>
+          <property name="minimum">
+           <double>100000.000000000000000</double>
+          </property>
+          <property name="maximum">
+           <double>500000000.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>500000.000000000000000</double>
+          </property>
+          <property name="value">
+           <double>5000000.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="lblSimTenor">
+          <property name="text">
+           <string>Tenor</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QSpinBox" name="spnSimTenor">
+          <property name="suffix">
+           <string> bulan</string>
+          </property>
+          <property name="minimum">
+           <number>1</number>
+          </property>
+          <property name="maximum">
+           <number>120</number>
+          </property>
+          <property name="value">
+           <number>12</number>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="4">
+         <layout class="QHBoxLayout" name="layoutSimAksiInput">
+          <item>
+           <spacer name="spacerSimAksi">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnResetSimulasi">
+            <property name="text">
+             <string>Reset</string>
+            </property>
+            <property name="btnType" stdset="0">
+             <string>neutral</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnHitungSimulasi">
+            <property name="text">
+             <string>Hitung Simulasi</string>
+            </property>
+            <property name="btnType" stdset="0">
+             <string>secondary</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="layoutSimCards">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QFrame" name="cardSimAngsuranBln">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>70</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="statCard" stdset="0">
+          <bool>true</bool>
+         </property>
+         <layout class="QVBoxLayout" name="layoutSimCard1">
+          <property name="leftMargin">
+           <number>12</number>
+          </property>
+          <property name="topMargin">
+           <number>8</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin">
+           <number>8</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblTitleSimAngsuran">
+            <property name="text">
+             <string>Angsuran / Bulan</string>
+            </property>
+            <property name="statTitle" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblValSimAngsuran">
+            <property name="text">
+             <string>Rp 0</string>
+            </property>
+            <property name="statValue" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="cardSimTotalBunga">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>70</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="statCard" stdset="0">
+          <bool>true</bool>
+         </property>
+         <property name="cardAccent" stdset="0">
+          <string>blue</string>
+         </property>
+         <layout class="QVBoxLayout" name="layoutSimCard2">
+          <property name="leftMargin">
+           <number>12</number>
+          </property>
+          <property name="topMargin">
+           <number>8</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin">
+           <number>8</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblTitleSimTotalBunga">
+            <property name="text">
+             <string>Total Bunga</string>
+            </property>
+            <property name="statTitle" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblValSimTotalBunga">
+            <property name="text">
+             <string>Rp 0</string>
+            </property>
+            <property name="statValue" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="cardSimTotalBayar">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>70</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="statCard" stdset="0">
+          <bool>true</bool>
+         </property>
+         <layout class="QVBoxLayout" name="layoutSimCard3">
+          <property name="leftMargin">
+           <number>12</number>
+          </property>
+          <property name="topMargin">
+           <number>8</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
+          <property name="bottomMargin">
+           <number>8</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="lblTitleSimTotalBayar">
+            <property name="text">
+             <string>Total Pengembalian</string>
+            </property>
+            <property name="statTitle" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblValSimTotalBayar">
+            <property name="text">
+             <string>Rp 0</string>
+            </property>
+            <property name="statValue" stdset="0">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QTableWidget" name="tblSimulasiAngsuran">
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="alternatingRowColors">
+        <bool>true</bool>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <attribute name="horizontalHeaderDefaultSectionSize">
+        <number>125</number>
+       </attribute>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Bulan Ke-</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Angsuran Pokok (Rp)</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Bunga (Rp)</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Total Angsuran (Rp)</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Sisa Pokok (Rp)</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="layoutSimButtons">
+       <property name="spacing">
+        <number>8</number>
+       </property>
+       <item>
+        <spacer name="spacerSimButtons">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnTutupSimulasi">
+         <property name="text">
+          <string>Tutup</string>
+         </property>
+         <property name="btnType" stdset="0">
+          <string>neutral</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnAjukanDariSimulasi">
+         <property name="text">
+          <string>Ajukan Pinjaman Ini</string>
+         </property>
+         <property name="btnType" stdset="0">
+          <string>primary</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

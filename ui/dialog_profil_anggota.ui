@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogProfilAnggota</class>
+ <widget class="QDialog" name="DialogProfilAnggota">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>560</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>450</width>
+    <height>520</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Profil Anggota</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: #F2F6F5;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #1E2D2B;
+    font-size: 13px;
+}
+
+QFrame#frameDialogHeader {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #D9E4E1;
+}
+
+QLabel#lblDialogTitle {
+    color: #1B3B36;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+QLabel#lblDialogSubtitle {
+    color: #5C706C;
+    font-size: 12px;
+}
+
+QGroupBox {
+    background-color: #FFFFFF;
+    border: 1px solid #D9E4E1;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 14px;
+    font-weight: bold;
+    color: #1B3B36;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 12px;
+    padding: 0 6px;
+    background-color: #FFFFFF;
+    color: #1F4E46;
+}
+
+QLabel {
+    color: #1E2D2B;
+}
+
+QLineEdit, QPlainTextEdit {
+    background-color: #F9FBFA;
+    border: 1px solid #C8D7D3;
+    border-radius: 5px;
+    padding: 6px 8px;
+    color: #1E2D2B;
+    font-size: 13px;
+}
+
+QLineEdit:focus, QPlainTextEdit:focus {
+    border: 1px solid #2A7B6F;
+    background-color: #FFFFFF;
+}
+
+QLineEdit:read-only, QPlainTextEdit:read-only {
+    background-color: #EEF3F1;
+    color: #5C706C;
+}
+
+QPushButton[btnType="primary"] {
+    background-color: #266D61;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 14px;
+    font-weight: bold;
+}
+
+QPushButton[btnType="primary"]:hover {
+    background-color: #1F5B51;
+}
+
+QPushButton[btnType="neutral"] {
+    background-color: #EDF3F1;
+    color: #2B423E;
+    border: 1px solid #C8D7D3;
+    border-radius: 5px;
+    padding: 7px 14px;
+}
+
+QPushButton[btnType="neutral"]:hover {
+    background-color: #DFEAE6;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="layoutProfilRoot">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frameDialogHeader">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QVBoxLayout" name="layoutDialogHeader">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>14</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>14</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblDialogTitle">
+        <property name="text">
+         <string>Profil &amp;&amp; Keamanan Akun Anggota</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblDialogSubtitle">
+        <property name="text">
+         <string>Lihat informasi keanggotaan dan ubah password akun Anda.</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="layoutProfilBody">
+     <property name="spacing">
+      <number>12</number>
+     </property>
+     <property name="leftMargin">
+      <number>20</number>
+     </property>
+     <property name="topMargin">
+      <number>14</number>
+     </property>
+     <property name="rightMargin">
+      <number>20</number>
+     </property>
+     <property name="bottomMargin">
+      <number>18</number>
+     </property>
+     <item>
+      <widget class="QGroupBox" name="grpDataAnggotaProfil">
+       <property name="title">
+        <string>Data Anggota</string>
+       </property>
+       <layout class="QFormLayout" name="formProfilData">
+        <property name="verticalSpacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <property name="topMargin">
+         <number>16</number>
+        </property>
+        <property name="rightMargin">
+         <number>14</number>
+        </property>
+        <property name="bottomMargin">
+         <number>14</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="lblProfilId">
+          <property name="text">
+           <string>ID Anggota</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="txtProfilId">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lblProfilNama">
+          <property name="text">
+           <string>Nama Lengkap</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="txtProfilNama">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lblProfilNik">
+          <property name="text">
+           <string>NIK</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="txtProfilNik">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="lblProfilTelp">
+          <property name="text">
+           <string>No. Telepon</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QLineEdit" name="txtProfilTelp">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="lblProfilAlamat">
+          <property name="text">
+           <string>Alamat</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPlainTextEdit" name="txtProfilAlamat">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>56</height>
+           </size>
+          </property>
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QLabel" name="lblProfilStatus">
+          <property name="text">
+           <string>Status Keanggotaan</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1">
+         <widget class="QLineEdit" name="txtProfilStatus">
+          <property name="readOnly">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="grpUbahPassword">
+       <property name="title">
+        <string>Ubah Password</string>
+       </property>
+       <layout class="QFormLayout" name="formUbahPassword">
+        <property name="verticalSpacing">
+         <number>8</number>
+        </property>
+        <property name="leftMargin">
+         <number>14</number>
+        </property>
+        <property name="topMargin">
+         <number>16</number>
+        </property>
+        <property name="rightMargin">
+         <number>14</number>
+        </property>
+        <property name="bottomMargin">
+         <number>14</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QLabel" name="lblPassLama">
+          <property name="text">
+           <string>Password Lama</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="txtPassLama">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+          <property name="placeholderText">
+           <string>Masukkan password saat ini</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="lblPassBaru">
+          <property name="text">
+           <string>Password Baru</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="txtPassBaru">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+          <property name="placeholderText">
+           <string>Masukkan password baru</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="lblPassKonfirmasi">
+          <property name="text">
+           <string>Konfirmasi Password</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="txtPassKonfirmasi">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+          <property name="placeholderText">
+           <string>Ulangi password baru</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="layoutProfilButtons">
+       <property name="spacing">
+        <number>8</number>
+       </property>
+       <item>
+        <spacer name="spacerProfilButtons">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnTutupProfil">
+         <property name="text">
+          <string>Tutup</string>
+         </property>
+         <property name="btnType" stdset="0">
+          <string>neutral</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSimpanPassword">
+         <property name="text">
+          <string>Simpan Password</string>
+         </property>
+         <property name="btnType" stdset="0">
+          <string>primary</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
