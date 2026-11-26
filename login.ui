@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginWindow</class>
+ <widget class="QWidget" name="LoginWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>880</width>
+    <height>520</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>760</width>
+    <height>460</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Login - Sistem Informasi Koperasi Simpan Pinjam</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#LoginWindow {
+    background-color: #F2F6F5;
+    font-family: &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;
+    color: #1E2D2B;
+}
+
+QFrame#frameBrand {
+    background-color: #1F4E46;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+QLabel#lblBrandTitle {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+QLabel#lblBrandSubtitle {
+    color: #CBE2DC;
+    font-size: 13px;
+}
+
+QLabel#lblBrandNote {
+    color: #9FC5BC;
+    font-size: 12px;
+}
+
+QFrame#frameForm {
+    background-color: #FFFFFF;
+    border: 1px solid #D9E4E1;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+QLabel#lblLoginHeader {
+    color: #1B3B36;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+QLabel#lblLoginSub {
+    color: #5C706C;
+    font-size: 12px;
+}
+
+QLabel.fieldLabel {
+    color: #2B423E;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QLineEdit, QComboBox {
+    background-color: #F9FBFA;
+    border: 1px solid #C8D7D3;
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 13px;
+    color: #1E2D2B;
+}
+
+QLineEdit:focus, QComboBox:focus {
+    border: 1px solid #2A7B6F;
+    background-color: #FFFFFF;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 26px;
+}
+
+QCheckBox {
+    color: #4A615D;
+    font-size: 12px;
+}
+
+QLabel#lblError {
+    color: #B91C1C;
+    font-size: 12px;
+}
+
+QPushButton#btnLogin {
+    background-color: #266D61;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton#btnLogin:hover {
+    background-color: #1F5B51;
+}
+
+QPushButton#btnLogin:pressed {
+    background-color: #194A42;
+}
+
+QPushButton#btnReset {
+    background-color: #EDF3F1;
+    color: #2B423E;
+    border: 1px solid #C8D7D3;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 13px;
+}
+
+QPushButton#btnReset:hover {
+    background-color: #E1ECE9;
+}</string>
+  </property>
+  <layout class="QHBoxLayout" name="layoutMain">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>36</number>
+   </property>
+   <property name="topMargin">
+    <number>36</number>
+   </property>
+   <property name="rightMargin">
+    <number>36</number>
+   </property>
+   <property name="bottomMargin">
+    <number>36</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="frameBrand">
+     <property name="minimumSize">
+      <size>
+       <width>300</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>340</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QVBoxLayout" name="layoutBrand">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <property name="leftMargin">
+       <number>28</number>
+      </property>
+      <property name="topMargin">
+       <number>36</number>
+      </property>
+      <property name="rightMargin">
+       <number>28</number>
+      </property>
+      <property name="bottomMargin">
+       <number>32</number>
+      </property>
+      <item>
+       <spacer name="spacerBrandTop">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblBrandTitle">
+        <property name="text">
+         <string>Koperasi Simpan Pinjam</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblBrandSubtitle">
+        <property name="text">
+         <string>Sistem Informasi Pengelolaan Simpanan, Pinjaman, dan Angsuran Anggota</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="lineBrand">
+        <property name="styleSheet">
+         <string notr="true">background-color: #356D63; max-height: 1px; border: none;</string>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblBrandNote">
+        <property name="text">
+         <string>Akses tersedia untuk:
+• Admin
+• Petugas Koperasi
+• Anggota</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="spacerBrandBottom">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>60</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frameForm">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <layout class="QVBoxLayout" name="layoutForm">
+      <property name="spacing">
+       <number>12</number>
+      </property>
+      <property name="leftMargin">
+       <number>36</number>
+      </property>
+      <property name="topMargin">
+       <number>32</number>
+      </property>
+      <property name="rightMargin">
+       <number>36</number>
+      </property>
+      <property name="bottomMargin">
+       <number>32</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblLoginHeader">
+        <property name="text">
+         <string>Masuk ke Akun</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblLoginSub">
+        <property name="text">
+         <string>Silakan pilih peran dan masukkan kredensial Anda.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="spacerFormTop">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>6</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblUsername">
+        <property name="text">
+         <string>Username / ID Pengguna</string>
+        </property>
+        <property name="class" stdset="0">
+         <string>fieldLabel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txtUsername">
+        <property name="placeholderText">
+         <string>Masukkan username atau ID</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblPassword">
+        <property name="text">
+         <string>Password</string>
+        </property>
+        <property name="class" stdset="0">
+         <string>fieldLabel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="txtPassword">
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+        <property name="placeholderText">
+         <string>Masukkan password</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chkShowPassword">
+        <property name="text">
+         <string>Tampilkan password</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lblError">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="spacerFormBottom">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="layoutButtons">
+        <property name="spacing">
+         <number>20</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="btnReset">
+          <property name="text">
+           <string>Reset</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnLogin">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Masuk</string>
+          </property>
+          <property name="default">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>txtUsername</tabstop>
+  <tabstop>txtPassword</tabstop>
+  <tabstop>chkShowPassword</tabstop>
+  <tabstop>btnReset</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

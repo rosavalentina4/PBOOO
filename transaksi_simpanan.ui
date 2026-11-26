@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TransaksiSimpananWindow</class>
+ <widget class="QMainWindow" name="TransaksiSimpananWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>640</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Sistem Informasi Koperasi Simpan Pinjam - Transaksi Simpanan</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow, QWidget#centralwidget {
+    background-color: #F2F6F5;
+    font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: #1E2D2B;
+    font-size: 13px;
+}
+
+/* Sidebar */
+QFrame#frameSidebar {
+    background-color: #1F4E46;
+    border: none;
+}
+
+QLabel#lblAppTitle {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+QLabel#lblAppSubtitle {
+    color: #B8DAD2;
+    font-size: 12px;
+}
+
+QLabel#lblUserInfo {
+    color: #CBE2DC;
+    font-size: 12px;
+    padding: 6px 8px;
+    background-color: #193F39;
+    border-radius: 6px;
+}
+
+QPushButton[navButton="true"] {
+    background-color: transparent;
+    color: #E2F0EC;
+    border: none;
+    border-radius: 6px;
+    text-align: left;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+QPushButton[navButton="true"]:hover {
+    background-color: #296359;
+    color: #FFFFFF;
+}
+
+QPushButton[navButton="true"]:checked {
+    background-color: #2E7D6F;
+    color: #FFFFFF;
+    font-weight: bold;
+    border-left: 4px solid #A7E3D4;
+}
+
+QPushButton#btnLogout {
+    background-color: #183D37;
+    color: #F5D0D0;
+    border: 1px solid #30665D;
+    border-radius: 6px;
+    padding: 9px 14px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+QPushButton#btnLogout:hover {
+    background-color: #991B1B;
+    color: #FFFFFF;
+    border-color: #991B1B;
+}
+
+/* Header Bar */
+QFrame#frameHeader {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #D9E4E1;
+}
+
+QLabel#lblPageTitle {
+    color: #1B3B36;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+QLabel#lblHeaderInfo {
+    color: #5C706C;
+    font-size: 12px;
+}
+
+/* Cards &amp; GroupBoxes */
+QFrame[statCard="true"] {
+    background-color: #FFFFFF;
+    border: 1px solid #D9E4E1;
+    border-top: 3px solid #266D61;
+    border-radius: 8px;
+}
+
+QLabel[statTitle="true"] {
+    color: #5C706C;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+QLabel[statValue="true"] {
+    color: #1B3B36;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+QGroupBox {
+    background-color: #FFFFFF;
+    border: 1px solid #D9E4E1;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 14px;
+    font-weight: bold;
+    color: #1B3B36;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 12px;
+    padding: 0 6px;
+    background-color: #FFFFFF;
+    color: #1F4E46;
+}
+
+/* Inputs */
+QLineEdit, QComboBox, QDateEdit, QSpinBox, QDoubleSpinBox, QPlainTextEdit {
+    background-color: #F9FBFA;
+    border: 1px solid #C8D7D3;
+    border-radius: 5px;
+    padding: 6px 8px;
+    color: #1E2D2B;
+    font-size: 13px;
+}
+
+QLineEdit:focus, QComboBox:focus, QDateEdit:focus, QSpinBox:focus, QDoubleSpinBox:focus, QPlainTextEdit:focus {
+    border: 1px solid #2A7B6F;
+    background-color: #FFFFFF;
+}
+
+QLineEdit:read-only {
+    background-color: #EEF3F1;
+    color: #5C706C;
+}
+
+/* Tables */
+QTableWidget {
+    background-color: #FFFFFF;
+    alternate-background-color: #F6FAF8;
+    border: 1px solid #D9E4E1;
+    border-radius: 6px;
+    gridline-color: #E6EEEC;
+    selection-background-color: #D2EBE5;
+    selection-color: #14332E;
+}
+
+QHeaderView::section {
+    background-color: #E7F0ED;
+    color: #1B3B36;
+    padding: 7px 8px;
+    border: none;
+    border-right: 1px solid #D3E0DC;
+    border-bottom: 1px solid #C8D7D3;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Action Buttons */
+QPushButton[btnType="primary"] {
+    background-color: #266D61;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 14px;
+    font-weight: bold;
+}
+
+QPushButton[btnType="primary"]:hover {
+    background-color: #1F5B51;
+}
+
+QPushButton[btnType="secondary"] {
+    background-color: #2A6F8E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 14px;
+    font-weight: bold;
+}
+
+QPushButton[btnType="secondary"]:hover {
+    background-color: #215973;
+}
+
+QPushButton[btnType="danger"] {
+    background-color: #C24141;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 14px;
+    font-weight: bold;
+}
+
+QPushButton[btnType="danger"]:hover {
+    background-color: #9E3030;
+}
+
+QPushButton[btnType="neutral"] {
+    background-color: #EDF3F1;
+    color: #2B423E;
+    border: 1px solid #C8D7D3;
+    border-radius: 5px;
+    padding: 7px 14px;
+}
+
+QPushButton[btnType="neutral"]:hover {
+    background-color: #DFEAE6;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="layoutRoot">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frameSidebar">
+      <property name="minimumSize">
+       <size>
+        <width>225</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>225</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <layout class="QVBoxLayout" name="layoutSidebar">
+       <property name="spacing">
+        <number>6</number>
+       </property>
+       <property name="leftMargin">
+        <number>14</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>14</number>
+       </property>
+       <property name="bottomMargin">
+        <number>16</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="lblAppTitle">
+         <property name="text">
+          <string>KOPERASI</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblAppSubtitle">
+         <property name="text">
+          <string>Simpan Pinjam • Admin</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="Line" name="lineSidebarTop">
+         <property name="styleSheet">
+          <string notr="true">background-color: #346B61; max-height: 1px; border: none; margin-top: 6px; margin-bottom: 8px;</string>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavDashboard">
+         <property name="text">
+          <string>Dashboard</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="navButton" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavUser">
+         <property name="text">
+          <string>Kelola User</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="navButton" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavParameter">
+         <property name="text">
+          <string>Bunga &amp;&amp; Denda</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="navButton" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavLaporan">
+         <property name="text">
+          <string>Laporan</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="navButton" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnNavTransaksi">
+         <property name="text">
+          <string>Transaksi Simpanan</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="navButton" stdset="0">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="spacerSidebar">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblUserInfo">
+         <property name="text">
+          <string>Login sebagai: Admin</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnLogout">
+         <property name="text">
+          <string>Logout</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="layoutContent">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QFrame" name="frameHeader">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>54</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>54</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <layout class="QHBoxLayout" name="layoutHeader">
+         <property name="leftMargin">
+          <number>20</number>
+         </property>
+         <property name="rightMargin">
+          <number>20</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="lblPageTitle">
+           <property name="text">
+            <string>Transaksi Simpanan</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="spacerHeader">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblHeaderInfo">
+           <property name="text">
+            <string>Sistem Informasi Koperasi Simpan Pinjam</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+      <item>
+        <!-- PAGE 4: LIHAT TRANSAKSI SIMPANAN -->
+        <widget class="QWidget" name="pageTransaksi">
+         <layout class="QVBoxLayout" name="layoutTransaksi">
+          <property name="spacing">
+           <number>12</number>
+          </property>
+          <property name="leftMargin">
+           <number>20</number>
+          </property>
+          <property name="topMargin">
+           <number>18</number>
+          </property>
+          <property name="rightMargin">
+           <number>20</number>
+          </property>
+          <property name="bottomMargin">
+           <number>18</number>
+          </property>
+          <item>
+           <widget class="QGroupBox" name="grpFilterTransaksi">
+            <property name="title">
+             <string>Filter Riwayat Transaksi Simpanan (Mode Lihat Admin)</string>
+            </property>
+            <layout class="QHBoxLayout" name="layoutFilterTransaksi">
+             <property name="spacing">
+              <number>10</number>
+             </property>
+             <property name="leftMargin">
+              <number>14</number>
+             </property>
+             <property name="topMargin">
+              <number>14</number>
+             </property>
+             <property name="rightMargin">
+              <number>14</number>
+             </property>
+             <property name="bottomMargin">
+              <number>12</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="lblTrxDari">
+               <property name="text">
+                <string>Dari</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="dateTransaksiDari">
+               <property name="minimumSize">
+                <size>
+                 <width>125</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="date">
+                <date>
+                 <year>2026</year>
+                 <month>1</month>
+                 <day>1</day>
+                </date>
+               </property>
+               <property name="displayFormat">
+                <string>dd-MMM-yyyy</string>
+               </property>
+               <property name="calendarPopup">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lblTrxSampai">
+               <property name="text">
+                <string>Sampai</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QDateEdit" name="dateTransaksiSampai">
+               <property name="minimumSize">
+                <size>
+                 <width>125</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="date">
+                <date>
+                 <year>2026</year>
+                 <month>12</month>
+                 <day>31</day>
+                </date>
+               </property>
+               <property name="displayFormat">
+                <string>dd-MMM-yyyy</string>
+               </property>
+               <property name="calendarPopup">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="cmbJenisTransaksi">
+               <property name="minimumSize">
+                <size>
+                 <width>130</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <item>
+                <property name="text">
+                 <string>Semua Jenis</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Setoran</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Penarikan</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="txtCariTransaksi">
+               <property name="placeholderText">
+                <string>Cari ID atau nama anggota...</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btnFilterTransaksi">
+               <property name="text">
+                <string>Tampilkan</string>
+               </property>
+               <property name="btnType" stdset="0">
+                <string>primary</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QTableWidget" name="tblTransaksi">
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <property name="selectionMode">
+             <enum>QAbstractItemView::SingleSelection</enum>
+            </property>
+            <property name="selectionBehavior">
+             <enum>QAbstractItemView::SelectRows</enum>
+            </property>
+            <attribute name="horizontalHeaderDefaultSectionSize">
+             <number>118</number>
+            </attribute>
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>ID Transaksi</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Tanggal</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>ID Anggota</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Nama Anggota</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Jenis Transaksi</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Nominal</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Saldo Akhir</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Petugas</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblTotalTransaksi">
+            <property name="text">
+             <string>Total Transaksi: 0  |  Total Setoran: Rp 0  |  Total Penarikan: Rp 0</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+      </item>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
