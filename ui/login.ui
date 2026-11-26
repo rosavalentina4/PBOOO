@@ -167,7 +167,7 @@ QPushButton#btnReset:hover {
      </property>
      <layout class="QVBoxLayout" name="layoutBrand">
       <property name="spacing">
-       <number>12</number>
+       <number>10</number>
       </property>
       <property name="leftMargin">
        <number>28</number>
@@ -186,13 +186,10 @@ QPushButton#btnReset:hover {
         <property name="orientation">
          <enum>Qt::Vertical</enum>
         </property>
-        <property name="sizeType">
-         <enum>QSizePolicy::Fixed</enum>
-        </property>
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>8</height>
+          <height>20</height>
          </size>
         </property>
        </spacer>
@@ -227,8 +224,17 @@ QPushButton#btnReset:hover {
       </item>
       <item>
        <widget class="QLabel" name="lblBrandTitle">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string>Koperasi Simpan Pinjam</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
@@ -237,13 +243,38 @@ QPushButton#btnReset:hover {
       </item>
       <item>
        <widget class="QLabel" name="lblBrandSubtitle">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string>Sistem Informasi Pengelolaan Simpanan, Pinjaman, dan Angsuran Anggota</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
         </property>
        </widget>
+      </item>
+      <item>
+       <spacer name="spacerBrandLine">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>14</height>
+         </size>
+        </property>
+       </spacer>
       </item>
       <item>
        <widget class="Line" name="lineBrand">
@@ -256,19 +287,6 @@ QPushButton#btnReset:hover {
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="lblBrandNote">
-        <property name="text">
-         <string>Akses tersedia untuk:
-• Admin
-• Petugas Koperasi
-• Anggota</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
        <spacer name="spacerBrandBottom">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -276,7 +294,7 @@ QPushButton#btnReset:hover {
         <property name="sizeHint" stdset="0">
          <size>
           <width>20</width>
-          <height>60</height>
+          <height>20</height>
          </size>
         </property>
        </spacer>
@@ -315,7 +333,7 @@ QPushButton#btnReset:hover {
       <item>
        <widget class="QLabel" name="lblLoginSub">
         <property name="text">
-         <string>Silakan pilih peran dan masukkan kredensial Anda.</string>
+         <string>Silakan login ke akun Anda.</string>
         </property>
        </widget>
       </item>
