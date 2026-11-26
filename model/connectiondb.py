@@ -5,7 +5,5 @@ def koneksi():
         host="localhost",
         user="root",
         password="",
-        database="pbooo"
+        database="koperasi_simpan_pinjam"
     )
-
-    return db
