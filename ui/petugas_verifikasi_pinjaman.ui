@@ -147,6 +147,10 @@ QGroupBox::title {
     color: #1F4E46;
 }
 
+QLabel {
+    color: #1E2D2B;
+}
+
 /* Inputs */
 QLineEdit, QComboBox, QDateEdit, QSpinBox, QDoubleSpinBox, QPlainTextEdit {
     background-color: #F9FBFA;
